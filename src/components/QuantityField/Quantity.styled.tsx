@@ -70,8 +70,8 @@ export const AddButton = styled.div`
 export const Qlabel = styled.div`
   position: relative;
   display: flex;
-  justify-content: left;
-  align-items: left;
+  justify-content: center;
+  align-items: center;
   padding: 5px;
   cursor: pointer;
   p {

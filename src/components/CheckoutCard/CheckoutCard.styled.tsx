@@ -17,6 +17,10 @@ export const Wrapper = styled.div`
   overflow: hidden;
   position: relative;
   margin-top: 20px;
+  :hover {
+    transform: scale(1.2);
+    transition: 1s;
+  }
 `;
 
 export const ImgWrapper = styled.div<WrapperProps>`
