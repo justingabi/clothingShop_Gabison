@@ -12,3 +12,8 @@ export const ProductsWrapper = styled.div`
   grid-template-columns: repeat(2, auto);
   gap: 20px;
 `;
+
+export const ProductsWrap = styled.div`
+  display: block;
+  width: fit-content;
+`;

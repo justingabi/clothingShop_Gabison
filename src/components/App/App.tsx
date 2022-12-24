@@ -7,6 +7,7 @@ import { useReducer } from "react";
 import { add, erase, save, initialState, remove, shopReducer, update, addQtty, totalItems } from "../useReducer";
 import { Product } from "../../models";
 import { Wishlist } from "../Wishlist";
+import { Checkout } from "../Checkout/Checkout";
 
 export const App = () => {
   const [state, dispatch] = useReducer(shopReducer, initialState);
@@ -49,18 +50,28 @@ export const App = () => {
 
     dispatch(erase(updatedCart));
   };
+  const updateCart = (product: Product, quantity: number) => {
+    const updatedCart = state.products.map((items: { name: string }) =>
+      items.name === product.name ? { ...items, quantity: quantity } : items
+    );
+    dispatch(addQtty(updatedCart));
+
+    updatePrice(updatedCart);
+  };
   const value = {
-    totalitems: state.totalitems,
+    totalitems: state.totalitems ,
     total: state.total,
     products: state.products,
     saved: state.saved,
     addToCart,
     removeItem,
     addToWL,
-    removeToWL
+    removeToWL,
+    updatePrice,
+    updateCart
   }
   return (
-    <ClothingShopContext.Provider value ={value}>
+    <ClothingShopContext.Provider value={value}>
       <Wrapper>
         <TitleWrapper>
           <h1>Clothing Shop Starter Project</h1>
@@ -69,11 +80,13 @@ export const App = () => {
           <Link to="/">Home</Link>
           <Link to="/cart">Cart</Link>
           <Link to="/wishlist">Wishlist</Link>
+          <Link to="/checkout">Checkout</Link>
         </LinksWrapper>
         <Routes>
           <Route path="/" element={<Products />} />
           <Route path="/cart" element={<Cart />} />
-        <Route path="/wishlist" element={<Wishlist />} />
+          <Route path="/wishlist" element={<Wishlist />} />
+          <Route path="/checkout" element={<Checkout />} />
         </Routes>
       </Wrapper>
     </ClothingShopContext.Provider>
