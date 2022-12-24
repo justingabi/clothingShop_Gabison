@@ -10,21 +10,24 @@ export const Title = styled.p`
 
 
 export const ProductsWrapper = styled.div`
-  display: block;
-  width: fit-content;
+display: block;
+width: fit-content;
  
 `;
 
 
 export const Total = styled.div`
-  display: flexbox;
+  bottom: 695px;
+  left: 550px;
+  right: 0px;
+  display: fixed;
   justify-content: center;
   align-items: center;
   width: 100%;
   height: 120px;
   
   overflow: hidden;
-  position: relative;
+  position: fixed;
   margin-top: 10px;
 `;
 
@@ -36,7 +39,6 @@ export const Labels = styled.div`
 `;
 
 export const TotalAmountLabel = styled.p`
-  display: flexbox;
   font-weight: bolder;
   font-style: normal;
   font-size: 20px;
@@ -83,16 +85,20 @@ text-align: end;
 `;
 
 export const PlaceOrder = styled.div`
+  bottom: 650px;
+  left: 1280px;
+  right: 0px;
   display: flexbox;
   justify-content: center;
   align-items: center;
-  width: 100%;
+  width: 460px;
   height: 50px;
   border-radius: 10px;
   box-shadow: 0 5px 10px rgba(52, 53, 99, 0.2);
   overflow: hidden;
-  position: relative;
-  margin-top: 20px;
+  position: fixed;
+  margin-top: 0px;
   color : white;
-  background-color: #965b3f ;
+  background-color: #000000 ;
+  cursor: pointer;
 `;

@@ -11,7 +11,7 @@ export const Wrapper = styled.div`
   justify-content: center;
   align-items: center;
   width: 100%;
-  height: 120px;
+  height: 130px;
   border-radius: 20px;
   box-shadow: 0 20px 40px rgba(52, 53, 99, 0.2), 0 1px 3px rgba(0, 0, 0, 0.05);
   overflow: hidden;
@@ -24,6 +24,7 @@ export const ImgWrapper = styled.div<WrapperProps>`
   align-items: center;
   width: 100px;
   height: 100px;
+  border: 2px solid #965b3f;
   border-radius: 20px;
   box-shadow: 0 5px 15px rgba(52, 53, 99, 0.2),  0 0 1px rgba(0, 0, 0, 0.05);
   background: ${(props) =>
@@ -51,7 +52,7 @@ export const Title = styled.p`
   font-style: normal;
   font-size: 35px;
   margin: 0;
-  color: #bb7250;
+  color: #000000;
   margin-bottom: 10px;
   margin-left: 10px;
 `;
@@ -78,7 +79,7 @@ export const TotalAmount = styled.p`
   font-style: normal;
   font-size: 25px;
   margin: 0;
-  color: #bb7250;
+  color: #000000;
   margin-top: 10px;
   margin-bottom: 0;
   margin-right: 20px;

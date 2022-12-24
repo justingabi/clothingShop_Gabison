@@ -7,11 +7,17 @@ import { Labels, PlaceOrder, PriceContainer, ProductsWrapper, Title, Total, Tota
 
 export const Checkout = () => {
   const { products, total, totalitems } = useContext(ClothingShopContext);
+
+  const checkout = () => {
+    alert(`Checkout - Total: $${total} 
+    \nThank you for purchasing!`);
+  
+  }
  
   return (
     <>
     <Title>
-         { products.length > 0 ? " Items ready for checkout ": " Empty! Add an item to your cart "}
+         { products.length > 0 ? " Ready for checkout! ": " Empty! Add an item to your cart "}
     </Title>
     <ProductsWrapper>
         {products.map((product: Product, index) => (
@@ -28,7 +34,7 @@ export const Checkout = () => {
           <TotalItems>{totalitems}</TotalItems>
         </PriceContainer>
       </Total>
-      <PlaceOrder>Place Order</PlaceOrder>
+      <PlaceOrder onClick={checkout}>Place Order</PlaceOrder>
     </>
   );
 };
