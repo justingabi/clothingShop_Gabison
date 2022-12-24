@@ -4,6 +4,7 @@ import { Product } from "../../models";
 import { ProductCard } from "../ProductCard";
 import { ProductsWrapper, Title } from "./Cart.styled";
 
+
 export const Cart = () => {
   const { products, total } = useContext(ClothingShopContext);
   return (
