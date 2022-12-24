@@ -2,7 +2,8 @@ import { useContext } from "react";
 import { ClothingShopContext, } from "../useContext/shopContext";
 import { Product } from "../../models";
 import { ProductCard } from "../ProductCard";
-import { ProductsWrapper, Title } from "./Cart.styled";
+import { ProductsWrapper, Title, ProductsWrap} from "./Cart.styled";
+import { Quantity } from "../QuantityField";
 
 
 export const Cart = () => {
@@ -12,8 +13,9 @@ export const Cart = () => {
       <Title>Your cart total is {total}.00$</Title>
       <ProductsWrapper>
         {products.map((product: Product, index) => (
-          <ProductCard {...product} key={index} />
+          <ProductsWrap><ProductCard {...product} key={index} /><Quantity {...product} key={index}></Quantity></ProductsWrap>
         ))}
+      
       </ProductsWrapper>
     </>
   );
